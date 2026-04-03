@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Muzammil Ali — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:   #0a0a0a;
+    --near:    #1a1a1a;
+    --dark:    #2c2c2c;
+    --mid:     #5a5a5a;
+    --muted:   #888;
+    --light:   #d4d4d4;
+    --pale:    #ebebeb;
+    --off:     #f4f4f2;
+    --white:   #ffffff;
+    --page-bg: #f7f7f5;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--page-bg);
+    color: var(--near);
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    max-width: 900px;
+    margin: 0 auto 18px;
+  }
+  .ctrl {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: all .2s;
+    border: 1.5px solid var(--dark);
+    background: transparent;
+    color: var(--dark);
+  }
+  .ctrl:hover { background: var(--near); color: var(--white); }
+  .ctrl svg { width: 12px; height: 12px; }
+
+  /* ── PAGE ── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 2px 40px rgba(0,0,0,.12);
+    border-top: 5px solid var(--black);
+    position: relative;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 52px 60px 38px;
+    border-bottom: 1px solid var(--pale);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+  }
+  .header-left {}
+  .header-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--muted);
+  }
+  .header-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1;
+    letter-spacing: -.02em;
+    margin-bottom: 8px;
+  }
+  .header-title {
+    font-size: .82rem;
+    font-weight: 400;
+    color: var(--mid);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .header-right {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .contact-item {
+    font-size: .8rem;
+    color: var(--mid);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  .contact-item a { color: inherit; text-decoration: none; }
+  .contact-item a:hover { color: var(--black); }
+  .c-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--light);
+    flex-shrink: 0;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: flex;
+    background: var(--black);
+    padding: 0;
+  }
+  .stat {
+    flex: 1;
+    padding: 20px 28px;
+    border-right: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: .65rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-top: 1px;
+  }
+  .stat-sub {
+    font-size: .75rem;
+    color: rgba(255,255,255,.55);
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 290px;
+  }
+
+  /* ── LEFT ── */
+  .col-left {
+    padding: 44px 48px 48px 60px;
+    border-right: 1px solid var(--pale);
+  }
+
+  /* ── RIGHT ── */
+  .col-right {
+    padding: 44px 36px 48px;
+    background: var(--off);
+  }
+
+  /* ── SECTION HEAD ── */
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 22px;
+  }
+  .sec-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--black);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-right: 16px;
+  }
+  .sec-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--pale);
+  }
+  .section { margin-bottom: 36px; }
+  .section:last-child { margin-bottom: 0; }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: .855rem;
+    line-height: 1.9;
+    color: var(--mid);
+    font-weight: 300;
+    border-left: 2px solid var(--black);
+    padding-left: 18px;
+  }
+
+  /* ── TIMELINE ── */
+  .tl-item {
+    margin-bottom: 24px;
+    padding-left: 20px;
+    border-left: 1px solid var(--pale);
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--black);
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tl-role {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+  .tl-date {
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    color: var(--muted);
+    background: var(--pale);
+    padding: 2px 9px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .tl-org {
+    font-size: .78rem;
+    color: var(--mid);
+    font-style: italic;
+    margin-bottom: 9px;
+  }
+  .tl-points {
+    list-style: none;
+  }
+  .tl-points li {
+    font-size: .8rem;
+    color: var(--mid);
+    line-height: 1.65;
+    padding: 2.5px 0 2.5px 14px;
+    position: relative;
+    font-weight: 300;
+  }
+  .tl-points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--light);
+    font-size: .7rem;
+  }
+
+  /* ── SKILLS ── */
+  .skill-group { margin-bottom: 16px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .sk-label {
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .sk-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sk-tag {
+    font-size: .75rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 2px;
+    transition: all .2s;
+    cursor: default;
+  }
+  .sk-tag.primary {
+    background: var(--near);
+    color: var(--white);
+  }
+  .sk-tag.secondary {
+    background: transparent;
+    border: 1px solid var(--light);
+    color: var(--mid);
+  }
+  .sk-tag:hover {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    border-color: var(--black) !important;
+  }
+
+  /* ── PROJECTS ── */
+  .proj-card {
+    border: 1px solid var(--pale);
+    border-radius: 2px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    background: var(--white);
+    transition: all .2s;
+    position: relative;
+  }
+  .proj-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--black);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform .25s;
+  }
+  .proj-card:hover::before { transform: scaleY(1); }
+  .proj-card:hover { border-color: var(--dark); box-shadow: 0 4px 16px rgba(0,0,0,.07); }
+  .proj-card:last-child { margin-bottom: 0; }
+  .proj-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  .proj-name { font-size: .87rem; font-weight: 600; color: var(--black); }
+  .proj-badge {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--light);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .proj-stack { font-size: .72rem; color: var(--muted); font-style: italic; margin-bottom: 7px; }
+  .proj-desc { font-size: .79rem; color: var(--mid); line-height: 1.65; font-weight: 300; }
+
+  /* ── CERTS ── */
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--white);
+    border: 1px solid var(--pale);
+    border-radius: 2px;
+    margin-bottom: 9px;
+    transition: all .2s;
+  }
+  .cert-item:hover { border-color: var(--dark); }
+  .cert-item:last-child { margin-bottom: 0; }
+  .cert-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--light);
+    line-height: 1;
+    min-width: 20px;
+  }
+  .cert-name { font-size: .84rem; font-weight: 600; color: var(--black); margin-bottom: 2px; }
+  .cert-issuer { font-size: .73rem; color: var(--muted); }
+
+  /* ── LANGUAGES ── */
+  .lang-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .lang-item:last-child { margin-bottom: 0; }
+  .lang-name { font-size: .83rem; font-weight: 500; color: var(--near); }
+  .lang-level { font-size: .7rem; color: var(--muted); }
+  .lang-bar-wrap {
+    width: 80px;
+    height: 3px;
+    background: var(--pale);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .lang-bar {
+    height: 100%;
+    background: var(--black);
+    border-radius: 2px;
+  }
+
+  /* ── DETAILS ── */
+  .detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--pale);
+    font-size: .8rem;
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-key { color: var(--muted); width: 72px; flex-shrink: 0; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+  .detail-val { color: var(--near); font-weight: 500; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; padding: 0; }
+    .controls { display: none; }
+    .page { box-shadow: none; max-width: none; }
+    .col-right { background: #f4f4f2 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .stats { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: A4; margin: 0; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .header { padding: 36px 24px 28px; flex-direction: column; align-items: flex-start; }
+    .header-right { text-align: left; }
+    .contact-item { justify-content: flex-start; }
+    .header-name { font-size: 2.6rem; }
+    .stats { flex-wrap: wrap; }
+    .stat { flex: 1 1 45%; }
+    .body { grid-template-columns: 1fr; }
+    .col-left { border-right: none; border-bottom: 1px solid var(--pale); padding: 30px 24px; }
+    .col-right { padding: 30px 24px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  .anim { animation: fadeIn .5s ease both; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .12s; }
+  .d3 { animation-delay: .19s; } .d4 { animation-delay: .26s; }
+  .d5 { animation-delay: .33s; }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button class="ctrl" id="printBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Download / Print
+  </button>
+</div>
+
+<div class="page" id="cv">
+
+  <!-- HEADER -->
+  <div class="header anim d1">
+    <div class="header-left">
+      <div class="header-label">Curriculum Vitae</div>
+      <h1 class="header-name">Syed Muzammil Ali</h1>
+      <div class="header-title">Web Developer &nbsp;&middot;&nbsp; Accountant &amp; Finance Professional</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-item"><span>Muzammilsyed2001@gmail.com</span><div class="c-dot"></div></div>
+      <div class="contact-item"><span>0311-3777033</span><div class="c-dot"></div></div>
+      <div class="contact-item"><span>Hyderabad, Sindh, Pakistan</span><div class="c-dot"></div></div>
+      <div class="contact-item"><a href="https://github.com/SyedMuzammil-svg" target="_blank">github.com/SyedMuzammil-svg</a><div class="c-dot"></div></div>
+      <div class="contact-item"><span>Available: Full-Time / Freelance</span><div class="c-dot"></div></div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats anim d1">
+    <div class="stat">
+      <div class="stat-num">2+</div>
+      <div class="stat-sub">Web Development</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-sub">Accounting & Finance</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">9</div>
+      <div class="stat-sub">Technologies</div>
+      <div class="stat-label">Skills Mastered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2</div>
+      <div class="stat-sub">Incl. NASA Int'l</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <div class="section anim d2">
+        <div class="sec-head">
+          <div class="sec-title">Professional Summary</div>
+          <div class="sec-rule"></div>
+        </div>
+        <p class="summary">A versatile professional combining 2+ years of hands-on web development with 5 years of practical accounting experience in the electronics sector. Proficient in building modern, responsive web applications using PHP, Laravel, and JavaScript, with a strong foundation in front-end technologies. Participated in the NASA International Space Apps Challenge 2024, demonstrating the ability to deliver solutions under real-world constraints. Committed to clean, scalable code and solving complex business problems through technology.</p>
+      </div>
+
+      <div class="section anim d3">
+        <div class="sec-head">
+          <div class="sec-title">Work Experience</div>
+          <div class="sec-rule"></div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-top">
+            <div class="tl-role">Senior Accountant</div>
+            <div class="tl-date">2019 – 2024 · 5 Years</div>
+          </div>
+          <div class="tl-org">Electronics Shop & Market — Hyderabad</div>
+          <ul class="tl-points">
+            <li>Maintained complete financial records, ledgers & daily transaction entries</li>
+            <li>Handled accounts payable / receivable and stock inventory control</li>
+            <li>Prepared monthly profit & loss statements and business reports</li>
+            <li>Operated and maintained dedicated accounting software systems</li>
+            <li>Supervised billing, invoicing, and vendor payments</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-top">
+            <div class="tl-role">Web Developer</div>
+            <div class="tl-date">2022 – Present</div>
+          </div>
+          <div class="tl-org">Freelance & Personal Projects</div>
+          <ul class="tl-points">
+            <li>Designed and developed responsive websites using HTML5, CSS3 & Bootstrap 5</li>
+            <li>Built dynamic back-end systems with PHP and Laravel framework</li>
+            <li>Enhanced interactivity with JavaScript and jQuery</li>
+            <li>Delivered complete web applications from design to deployment</li>
+            <li>Participated in NASA International Space Apps Challenge 2024</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section anim d4">
+        <div class="sec-head">
+          <div class="sec-title">Education</div>
+          <div class="sec-rule"></div>
+        </div>
+
+               <div class="tl-item">
+          <div class="tl-top">
+            <div class="tl-role">Bachelor of Science (BSc)</div>
+            <div class="tl-date">Completed</div>
+          </div>
+          <div class="tl-org">Degree College — Hyderabad</div>
+          <ul class="tl-points">
+            <li>Major: Applied Science</li>
+            <li>Strong analytical and scientific thinking foundation</li>
+          </ul>
+        </div>
+      </div>
+      
+        <div class="tl-item">
+          <div class="tl-top">
+            <div class="tl-role">IT Diploma — Web Development</div>
+            <div class="tl-date">In Progress</div>
+          </div>
+          <div class="tl-org">Aptech Learning Center — Hyderabad</div>
+          <ul class="tl-points">
+            <li>3-Year comprehensive IT program (1 year completed)</li>
+            <li>Modules: Web Dev, Databases, Networking & Software Engineering</li>
+          </ul>
+        </div>
+
+ 
+
+    </div><!-- /col-left -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <div class="section anim d2">
+        <div class="sec-head">
+          <div class="sec-title">Details</div>
+          <div class="sec-rule"></div>
+        </div>
+        <div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">Hyderabad, Sindh</span></div>
+        <div class="detail-row"><span class="detail-key">Phone</span><span class="detail-val">0311-3777033</span></div>
+        <div class="detail-row"><span class="detail-key">Email</span><span class="detail-val" style="font-size:.74rem">syedmuzammilali.dev@gmail.com</span></div>
+        <div class="detail-row"><span class="detail-key">Available</span><span class="detail-val">Full-Time / Freelance</span></div>
+      </div>
+
+      <div class="section anim d2">
+        <div class="sec-head">
+          <div class="sec-title">Technical Skills</div>
+          <div class="sec-rule"></div>
+        </div>
+        <div class="skill-group">
+          <div class="sk-label">Front-End</div>
+          <div class="sk-tags">
+            <span class="sk-tag primary">HTML5</span>
+            <span class="sk-tag primary">CSS3</span>
+            <span class="sk-tag primary">Bootstrap 5</span>
+            <span class="sk-tag primary">JavaScript</span>
+            <span class="sk-tag primary">jQuery</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sk-label">Back-End</div>
+          <div class="sk-tags">
+            <span class="sk-tag primary">PHP</span>
+            <span class="sk-tag primary">Laravel</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sk-label">Tools &amp; Business</div>
+          <div class="sk-tags">
+            <span class="sk-tag secondary">MS Excel</span>
+            <span class="sk-tag secondary">Accounting Software</span>
+            <span class="sk-tag secondary">GitHub</span>
+            <span class="sk-tag secondary">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section anim d3">
+        <div class="sec-head">
+          <div class="sec-title">Projects</div>
+          <div class="sec-rule"></div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-header">
+            <div class="proj-name">Weather Application</div>
+            <div class="proj-badge">NASA 2024</div>
+          </div>
+          <div class="proj-stack">JavaScript · API Integration · Bootstrap 5</div>
+          <div class="proj-desc">Real-time weather app built for the NASA International Space Apps Challenge. Fetches live climate & forecast data via weather APIs with an intuitive dashboard interface.</div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-header">
+            <div class="proj-name">Shop Management System</div>
+            <div class="proj-badge">PHP · 2024</div>
+          </div>
+          <div class="proj-stack">PHP · Laravel · MySQL · Bootstrap 5</div>
+          <div class="proj-desc">Complete shop management web app for electronics businesses — invoice & billing, stock inventory tracking, profit & loss reports, and role-based secure login.</div>
+        </div>
+      </div>
+
+      <div class="section anim d4">
+        <div class="sec-head">
+          <div class="sec-title">Certifications</div>
+          <div class="sec-rule"></div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-num">01</div>
+          <div>
+            <div class="cert-name">NASA Space Apps Challenge</div>
+            <div class="cert-issuer">International Certificate · NASA</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-num">02</div>
+          <div>
+            <div class="cert-name">Vision Certification Program</div>
+            <div class="cert-issuer">Professional Development Certificate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section anim d5">
+        <div class="sec-head">
+          <div class="sec-title">Languages</div>
+          <div class="sec-rule"></div>
+        </div>
+        <div class="lang-item">
+          <div>
+            <div class="lang-name">Urdu</div>
+            <div class="lang-level">Native</div>
+          </div>
+          <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div>
+            <div class="lang-name">English</div>
+            <div class="lang-level">Intermediate</div>
+          </div>
+          <div class="lang-bar-wrap"><div class="lang-bar" style="width:60%"></div></div>
+        </div>
+      </div>
+
+    </div><!-- /col-right -->
+  </div>
+
+</div><!-- /page -->
+
+<script>
+  document.getElementById('printBtn').addEventListener('click', () => window.print());
+</script>
+
+</body>
+</html>
